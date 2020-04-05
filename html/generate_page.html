@@ -1,0 +1,119 @@
+<html>
+<head>
+    <title>Code Link</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/generate-page-style.css">
+    <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript">
+
+      $(document).ready(function() {
+            $("#file").change(function(){
+                 if(this.files && this.files[0]){
+                     var reader = new FileReader();
+                     reader.onload = imageIsLoaded;
+                     reader.readAsDataURL(this.files[0]);
+                     $("#file-name").html(this.files[0].name);
+
+                 }
+             });
+            $(window).scroll(function(){
+                if($(document).scrollTop() > 50) {
+                    $("#scroll").css("opacity", "0");
+                } else{
+                    $("#scroll").css("opacity",".6");
+                }
+            });
+            $("#title-form").on('change keydown paste input',function(e){
+                $("#title-preview").html(e.target.value);
+            });
+            $("#message-form").on('change keydown paste input',function(e){
+                $("#message-preview").html(e.target.value);
+            });
+      });
+      function imageIsLoaded(e){
+          $("#image-preview").attr('src',e.target.result);
+      };
+    </script>
+</head>
+
+<body>
+
+<!--Nav bar-->
+<div class="topnav-container">
+    <a href="generate" class="active">Generate Code</a>
+    <a href="index" class="logo">CODE LINK</a>
+    <a href="collection">View Collection</a>
+</div>
+
+<!--Background images-->
+<div class="background-images">
+    <div class="image-flex-container">
+        <img src="/images/QR_image_example.svg" style="width:100%">
+        <img src="/images/QR_image_example.svg" style="width:100%">
+        <img src="/images/QR_image_example.svg" style="width:100%">
+        <img src="/images/QR_image_example.svg" style="width:100%">
+        <img src="/images/QR_image_example.svg" style="width:100%">
+    </div>
+    <div class="image-flex-container">
+        <img src="/images/QR_image_example.svg" style="width:100%">
+        <img src="/images/QR_image_example.svg" style="width:100%">
+        <img src="/images/QR_image_example.svg" style="width:100%">
+        <img src="/images/QR_image_example.svg" style="width:100%">
+        <img src="/images/QR_image_example.svg" style="width:100%">
+    </div>
+</div>
+
+<!-- Form -->
+
+<!-- User form -->
+<div id="form-container">
+    <div id="form-header">
+        <h1>Generate Your Code</h1>
+    </div>
+    <form id="form" action="handle_form" enctype="multipart/form-data" method="POST">
+        Title:<br>
+        <input id="title-form" type="text" placeholder="Title (50 characters)" name="title" maxlength="50" autocomplete="off" required><br>
+        Message:<br>
+        <textarea id="message-form" name="message" placeholder="Message (200 characters)" autocomplete="off" maxlength="200" required></textarea>
+        <br>
+        <div id="file-container">
+            Only .jpg files accepted<br>
+            <input type="file" name="file" id="file" accept="image/jpeg" file_extension=".jpg" class="hidden" required>
+            <input type="submit" id="submit" class="hidden">
+            <label for="file"><div id="upload">Upload your image</div></label>
+            <div id="file-name"></div>
+        </div>
+    </form>
+    <div id="preview-label">
+        Scroll down to view live preview
+    </div>
+</div>
+
+<div class="divider"></div>
+
+<div id="scroll">
+    <div><img src="images/arrow_icon.png" id="arrow-icon" width="30px" height="30px"></div>
+</div>
+
+<!--PREVIEW-->
+<div id="preview-container">
+    <div id="title-container">
+        <h1 id="title-preview">Title</h1>
+    </div>
+    <div id="message-container">
+        <p id="message-preview">Message</p>
+    </div>
+    <div id="image-container">
+        <img id="image-preview" src=""/>
+    </div>
+</div>
+
+<div class="divider"></div>
+
+<!--SUBMIT BUTTON-->
+<label for="submit">
+    <div id="submit-container">Generate Code</div>
+</label>
+
+</body>
+</html>

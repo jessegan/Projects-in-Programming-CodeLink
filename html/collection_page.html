@@ -1,0 +1,84 @@
+<html>
+
+<head>
+    <title>Code Link</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/collection-page-style.css">
+    <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+
+        $(".delete-row").click(function(e) {
+          var obj = $(this);
+          $.ajax({
+            type: "POST",
+            url: "/generator",
+            data: {"action":"True","code_id": $(this).attr("value")}
+          })
+          .done(function() {
+            $(obj).closest("tr").remove();
+          });
+          e.preventDefault();
+        });
+
+      });
+    </script>
+</head>
+
+<body>
+
+<!--Nav bar-->
+<div class="topnav-container">
+    <a href="generate">Generate Code</a>
+    <a href="index" class="logo">CODE LINK</a>
+    <a href="collection" class="active">View Collection</a>
+</div>
+
+<!--Background images-->
+<div class="background-images">
+    <div class="image-flex-container">
+        <img src="/images/QR_image_example.svg" >
+        <img src="/images/QR_image_example.svg" >
+        <img src="/images/QR_image_example.svg" >
+        <img src="/images/QR_image_example.svg" >
+        <img src="/images/QR_image_example.svg" >
+    </div>
+    <div class="image-flex-container">
+        <img src="/images/QR_image_example.svg" >
+        <img src="/images/QR_image_example.svg" >
+        <img src="/images/QR_image_example.svg" >
+        <img src="/images/QR_image_example.svg" >
+        <img src="/images/QR_image_example.svg" >
+    </div>
+</div>
+
+<!--TABLE-->
+<div id="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Message</th>
+                <th>Date Created</th>
+                <th>Views</th>
+                <th colspan="4">Actions</th>
+            </tr>
+        </thead>
+        <tbody>%s</tbody>
+
+    </table>
+</div>
+
+<div id="update-form">
+    <h3>Update your QR code</h3>
+    <form id="form">
+        New Title:<br>
+        <input type="text" name="new_title" id="new_title" autocomplete="off"> <br>
+        New Message:<br>
+        <input type="textarea" maxlength="250" name="new_message" id="new_message" autocomplete="off"><br>
+        <input type="submit">
+    </form>
+    <button id="cancel">cancel</button>
+</div>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<html>
+<head>
+    <title>Code Link</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/update-page-style.css">
+    <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#file").change(function(){
+                 if(this.files && this.files[0]){
+                     var reader = new FileReader();
+                     reader.onload = imageIsLoaded;
+                     reader.readAsDataURL(this.files[0]);
+                     $("#file-name").html(this.files[0].name);
+
+                 }
+             });
+            $("#title_input").on('change keydown paste input',function(e){
+                $("#title").html(e.target.value);
+            });
+            $("#message_input").on('change keydown paste input',function(e){
+                $("#message").html(e.target.value);
+            });
+            $(window).scroll(function(){
+                if($(document).scrollTop() > 50) {
+                    $("#scroll").css("opacity", "0");
+                } else{
+                    $("#scroll").css("opacity",".6");
+                }
+            });
+        });
+        function imageIsLoaded(e){
+          $("#image-preview").attr('src',e.target.result);
+        };
+    </script>
+</head>
+
+<body>
+
+<!--Nav bar-->
+<div class="topnav-container">
+    <a href="generate">Generate Code</a>
+    <a href="index" class="logo">CODE LINK</a>
+    <a href="collection">View Collection</a>
+</div>
+
+<!--Background images-->
+<div class="background-images">
+    <div class="image-flex-container">
+        <img src="/images/QR_image_example.svg" >
+        <img src="/images/QR_image_example.svg" >
+        <img src="/images/QR_image_example.svg" >
+        <img src="/images/QR_image_example.svg" >
+        <img src="/images/QR_image_example.svg" >
+    </div>
+    <div class="image-flex-container">
+        <img src="/images/QR_image_example.svg" >
+        <img src="/images/QR_image_example.svg" >
+        <img src="/images/QR_image_example.svg" >
+        <img src="/images/QR_image_example.svg" >
+        <img src="/images/QR_image_example.svg" >
+    </div>
+</div>
+
+
+<!-- FORM -->
+<div id="form-container">
+    <div id="form-header">
+        <h1>Update Your Code</h1>
+    </div>
+    <form id="form" action="update_code" enctype="multipart/form-data" method="POST">
+        Title:<br>
+        <input type="text" id="title-form" name="new_title" value="%s" maxlength="50" autocomplete="off" required>
+        <br>
+        Message:<br>
+        <textarea id="message-form" name="new_message" autocomplete="off" maxlength="200" required>%s</textarea>
+        <br>
+        <div id="file-container">
+            Only .jpg files accepted<br>
+            <input type="file" name="new_file" id="file" accept="image/jpeg" file_extension=".jpg" class="hidden">
+            <label for="file"><div id="upload">Upload your image</div></label>
+            <div id="file-name"></div>
+        </div>
+
+        <input type="text" name="update_id" value="%s" class="hidden">
+        <input type="submit" id="submit" value="Update" class="hidden">
+    </form>
+    <div id="cancel-button">
+        <a href="collection">Cancel Update</a>
+    </div>
+
+    <div id="preview-label">
+        Scroll down to view live preview
+    </div>
+</div>
+
+<div class="divider"></div>
+
+<div id="scroll">
+    <div><img src="images/arrow_icon.png" id="arrow-icon" width="30px" height="30px"></div>
+</div>
+
+<!--PREVIEW-->
+<div id="preview-container">
+    <div id="title-container">
+        <h1 id="title">%s</h1>
+    </div>
+    <div id="message-container">
+        <p id="message">%s</p>
+    </div>
+    <div id="image-container">
+        <img id="image-preview" src="/files/%s">
+    </div>
+
+</div>
+
+<div class="divider"></div>
+
+<!--SUBMIT BUTTON-->
+<label for="submit">
+    <div id="submit-container">Update Code</div>
+</label>
+
+</body>
+</html>

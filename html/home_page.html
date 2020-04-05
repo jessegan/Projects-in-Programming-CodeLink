@@ -1,0 +1,85 @@
+<html>
+<head>
+    <title>CODE LINK</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/home-page-style.css">
+    <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+
+            $(window).scroll(function(){
+                if($(document).scrollTop() > 50) {
+                    $("#scroll").css("opacity", "0");
+                } else{
+                    $("#scroll").css("opacity",".6");
+                }
+            });
+
+        });
+    </script>
+</head>
+<body>
+
+<div class="background-images">
+    <div class="image-flex-container">
+        <img src="/images/QR_image_example.svg" style="width:100%">
+        <img src="/images/QR_image_example.svg" style="width:100%">
+        <img src="/images/QR_image_example.svg" style="width:100%">
+        <img src="/images/QR_image_example.svg" style="width:100%">
+        <img src="/images/QR_image_example.svg" style="width:100%">
+    </div>
+    <div class="image-flex-container">
+        <img src="/images/QR_image_example.svg" style="width:100%">
+        <img src="/images/QR_image_example.svg" style="width:100%">
+        <img src="/images/QR_image_example.svg" style="width:100%">
+        <img src="/images/QR_image_example.svg" style="width:100%">
+        <img src="/images/QR_image_example.svg" style="width:100%">
+    </div>
+</div>
+
+<div class="main_content_container">
+    <h1>CODE LINK</h1>
+    <h6>Join the QR code revolution</h6>
+
+    <div class="nav-button-container">
+        <a href="generate">Generate Code</a>
+        <a href="collection">View Collection</a>
+    </div>
+</div>
+
+<div id="info-container">
+    <div class="divider"></div>
+    <div id="about">
+        <p>Code Link is a content distribution platform built on QR codes designed to provide
+            a new and hidden way to share events, premiers, and images.</p>
+    </div>
+    <div class="divider"></div>
+    <div id="how-to">
+        <div><h1>1</h1><p>Generate your code with a title, message, and image</p></div>
+        <div><h1>2</h1><p>Download and share your QR code to the world</p></div>
+        <div><h1>3</h1><p>View your collection of codes and see how it's spreading</p></div>
+    </div>
+    <div class="divider"></div>
+    <div id="mission">
+        <div id="about-text-container">
+            <h1>About Us</h1>
+            <p>In this day and age, the data of fans, supporters, and all of those who care for our work is essential.
+                Unfortunately, it is far too often an issue, where the data isn’t easily available to content creators.
+                <br><br>
+                Our mission is to create an almost effortless experience for both businesses and consumers.
+                We are targeting content creators of all kinds who are looking to build their own community.
+                By gaining insight into this information, these creators are empowered to then connect and build a
+                stronger relationship to their fanbase that the world has ever seen. This empowerment can lead to cleaner
+                and more efficient marketing strategies, and many other benefits.</p>
+        </div>
+</div>
+</div>
+
+
+
+<div id="scroll">
+    <div><img src="images/arrow_icon.png" id="arrow-icon" width="30px" height="30px"></div>
+</div>
+
+</body>
+</html>

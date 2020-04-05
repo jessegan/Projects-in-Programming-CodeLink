@@ -1,0 +1,155 @@
+body{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/*Background images*/
+.background-images{
+    position: fixed;
+    z-index: -100;
+    top: 0;
+}
+.image-flex-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    opacity: .25;
+}
+
+/*Main content div*/
+.main_content_container {
+    position: relative;
+    margin: 25vh auto;
+    width: 75%;
+    height: 50vh;
+    text-align: center;
+}
+.main_content_container h1{
+    font-size: 10em;
+    margin: 0;
+}
+.main_content_container h6{
+    font-size: 2em;
+    font-weight: normal;
+    margin: .1em 0 .2em;
+}
+/*Nav buttons in main content div*/
+.nav-button-container{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+.nav-button-container a{
+    margin: 20px;
+    padding: 30px 40px;
+    border-style: solid;
+    border-color: darkmagenta;
+    border-radius: 50px;
+    text-decoration: none;
+    color:black;
+    font-size: 20px;
+    font-weight: bold;
+}
+.nav-button-container a:visited{
+    color: initial;
+}
+.nav-button-container a:hover{
+    background-color: darkmagenta;
+    color: white;
+}
+
+/*Info section div*/
+#info {
+    position: static;
+    width: 100%;
+    height: 50vh;
+}
+.divider {
+    position: relative;
+    top: 0;
+    width: 100%;
+    height: 50px;
+}
+#about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 50px;
+    border: solid;
+    text-align: center;
+    width: 60vw;
+    margin: 30px auto;
+}
+#about p {
+    position: relative;
+    width: 40vw;
+    font-weight: 900;
+    font-size: 1.2em;
+    color: darkmagenta;
+    padding: 20px 0;
+}
+#how-to {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 50px;
+    border: solid;
+    width: 60vw;
+    margin: 30px auto;
+}
+#how-to div {
+    padding: 10px;
+    width: 33%;
+    text-align: center;
+}
+#how-to p {
+    font-weight: bold;
+    font-size: 1em;
+    padding: 0 0 20px 0;
+}
+#mission {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 50px;
+    border: solid;
+    text-align: center;
+    width: 60vw;
+    margin: 30px auto;
+}
+#about-text-container {
+    width: 70%;
+    text-align: left;
+}
+#about-text-container p{
+    padding: 0 0 20px 0;
+}
+
+/*Scroll indicator at bottom*/
+#scroll {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    margin-left: -25px;
+    left: 50%;
+    bottom: 10px;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 50%;
+    background: darkmagenta;
+    color: white;
+    opacity: .6;
+    transition: opacity 600ms;
+    vertical-align: middle;
+}
+#scroll div {
+    position:relative;
+    margin: 10px auto;
+}

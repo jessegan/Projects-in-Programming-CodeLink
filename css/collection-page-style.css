@@ -1,0 +1,130 @@
+body{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/*top nav bar*/
+.topnav-container{
+    position: relative;
+    height: 100px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+.topnav-container a{
+    margin: 20px;
+    padding: 15px 20px;
+    border-style: solid;
+    border-color: darkmagenta;
+    border-radius: 50px;
+    text-decoration: none;
+    color:black;
+    font-size: 15px;
+    font-weight: bold;
+}
+.topnav-container a:visited{
+    color: initial;
+}
+.topnav-container a.active{
+    background-color: darkmagenta;
+    color: white;
+}
+.topnav-container a.logo{
+    border-style: none;
+    color: black;
+    font-size: 50px;
+}
+
+/*Background images*/
+.background-images{
+    position: fixed;
+    z-index: -100;
+    top: 0;
+    height: 100vh;
+    overflow: hidden;
+}
+.image-flex-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    opacity: .25;
+}
+.image-flex-container img {
+    width: 100%;
+}
+
+/*Table*/
+#table-container {
+    position: relative;
+    margin: 25px auto;
+    width: 90%;
+    height: 80vh;
+    background: white;
+    border: solid;
+    border-radius: 50px;
+    overflow: hidden;
+}
+table {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+thead {
+    background: darkmagenta;
+    color: white;
+    text-align: center;
+}
+thead tr {
+    height:50px;
+}
+thead th:nth-child(1) {
+  width: 20%;
+}
+thead th:nth-child(2) {
+  width: 35%;
+}
+thead th:nth-child(3) {
+  width: 15%;
+}
+thead th:nth-child(4) {
+  width: 10%;
+}
+thead th:nth-child(5) {
+  width: 20%;
+}
+tbody tr{
+    height: 50px;
+}
+tbody .title{
+
+}
+tbody .message {
+
+}
+tbody .date{
+    text-align: center;
+}
+tbody .views {
+    text-align: center;
+}
+
+/*Update form*/
+#update-form {
+    align-items: center;
+    justify-content: center;
+    background: white;
+    margin: 0 auto;
+    height:30vh;
+    width: 25vw;
+    position: fixed;
+    top: 35vh;
+    visibility: hidden;
+}
